@@ -54,6 +54,11 @@ public class InvalidLoginTest {
         login("standard_user", "wrong@password!");
         assertErrorContains("Username and password do not match any user in this service");
     }
+    @Test //  TC6: spaces in both fields - Component
+    public void TC03_spacesInFields() {
+        login("     ", "     ");
+        assertErrorContains("Username and password do not match any user in this service");
+    }
 
     @Test // TC09: empty password - Component
     public void TC07_emptyPassword() {
@@ -101,7 +106,7 @@ public class InvalidLoginTest {
     @AfterMethod
     public void tearDown() {
         try {
-            Thread.sleep(3000); 
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

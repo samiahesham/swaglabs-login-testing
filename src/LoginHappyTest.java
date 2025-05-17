@@ -31,11 +31,7 @@ public class LoginHappyTest {
         assertErrorContains("Username and password do not match any user in this service");
     }
 
-    @Test //  TC6: spaces in both fields - Component
-    public void TC03_spacesInFields() {
-        login("     ", "     ");
-        assertErrorContains("Username and password do not match any user in this service");
-    }
+
 
     @Test // TC7: special characters in username - Component
     public void TC04_specialCharsInUsername() {
